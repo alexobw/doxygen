@@ -1,0 +1,10 @@
+# Doxyfile für das 4-Gewinnt-Projekt
+
+PROJECT_NAME = "4 Gewinnt Spiel"
+OUTPUT_DIRECTORY = doc
+INPUT = main.c src/board.c src/input.c src/output.c
+FILE_PATTERNS = *.c
+RECURSIVE = YES
+GENERATE_LATEX = YES
+GENERATE_HTML = YES
+EXTRACT_ALL = YES
