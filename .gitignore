@@ -1,0 +1,10 @@
+# Ignoriere alle Inhalte des 'docs'-Ordners, aber nicht die Ordner selbst
+example/doc/*
+task/doc/*
+
+# Behalte den Ordner 'docs' selbst
+!example/doc/.gitignore
+!task/doc/.gitignore
+
+# Ignoriere alle .o-Dateien
+*.o

@@ -13,6 +13,7 @@ extern void printWinner(int winner);
 
 /**
  * Main-Funktion, um das Spiel zu starten.
+ * Das Spiel läuft solange, bis ein Gewinner ermittelt wurde oder das Spielfeld voll ist.
  */
 int main() {
     char board[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
@@ -20,16 +21,16 @@ int main() {
                         {' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
                         {' ', ' ', ' ', ' ', ' ', ' ', ' '},
                         {' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' '}};
+                        {' ', ' ', ' ', ' ', ' ', ' ', ' '}};  // Spielfeld initialisieren
 
     int currentPlayer = 1;  // 1 für Spieler 1 (X), 2 für Spieler 2 (O)
     int column, winner = 0;
     
     while (!winner && !checkFullBoard(board)) {
         system("clear"); // Bildschirm nach jedem Zug neu laden (Linux/Unix/Mac)
-        printBoard(board);
+        printBoard(board);  // Spielfeld ausgeben
 
-        column = getPlayerInput(currentPlayer);
+        column = getPlayerInput(currentPlayer);  // Eingabe des Spielers einholen
 
         // Überprüfen, ob die Spalte voll ist
         if (!makeMove(board, column, currentPlayer)) {
@@ -45,10 +46,10 @@ int main() {
     }
 
     system("clear");  // Bildschirm nach dem Spielende neu laden
-    printBoard(board);
+    printBoard(board);  // Endgültiges Spielfeld anzeigen
 
     if (winner != 0) {
-        printWinner(winner);  // Zeige den Gewinner an
+        printWinner(winner);  // Gewinner anzeigen
     } else {
         printf("\nDas Spiel endet mit einem Unentschieden! Es gibt keinen Gewinner.\n");
     }
