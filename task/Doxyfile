@@ -1,7 +1,7 @@
 # Doxyfile für das 4-Gewinnt-Projekt
 
 PROJECT_NAME = "Tick Tack Tow "
-OUTPUT_DIRECTORY = doc
+OUTPUT_DIRECTORY = docs
 INPUT = tikTakTow.c
 FILE_PATTERNS = *.c
 RECURSIVE = YES

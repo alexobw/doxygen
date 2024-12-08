@@ -1,7 +1,7 @@
 # Doxyfile für das 4-Gewinnt-Projekt
 
 PROJECT_NAME = "4 Gewinnt Spiel"
-OUTPUT_DIRECTORY = doc
+OUTPUT_DIRECTORY = docs
 INPUT = main.c src/board.c src/input.c src/output.c
 FILE_PATTERNS = *.c
 RECURSIVE = YES

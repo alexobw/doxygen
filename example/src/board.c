@@ -1,11 +1,22 @@
+/**
+ * @file board.c
+ * @brief Funktionen für das Spielfeld und die Spiellogik in einem 4-Gewinnt-Spiel.
+ * 
+ * Diese Datei enthält Funktionen, die für die Verwaltung des Spielfeldes
+ * zuständig sind, wie das Überprüfen, ob das Spielfeld voll ist, das Setzen
+ * eines Zuges und das Überprüfen, ob ein Spieler gewonnen hat.
+ */
+
 #include <stdio.h>
 
-#define ROWS 6
-#define COLS 7
+#define ROWS 6  ///< Anzahl der Reihen im Spielfeld
+#define COLS 7  ///< Anzahl der Spalten im Spielfeld
 
 /**
- * Überprüft, ob das Spielfeld voll ist (keine freien Felder mehr).
- * Gibt 1 zurück, wenn das Spielfeld voll ist, andernfalls 0.
+ * @brief Überprüft, ob das Spielfeld voll ist (keine freien Felder mehr).
+ * 
+ * Diese Funktion prüft die oberste Reihe des Spielfelds, um festzustellen,
+ * ob es noch freie Felder gibt.
  * 
  * @param board Das Spielfeld als 2D-Array.
  * @return 1, wenn das Spielfeld voll ist, andernfalls 0.
@@ -20,7 +31,7 @@ int checkFullBoard(char board[ROWS][COLS]) {
 }
 
 /**
- * Setzt das Zeichen des aktuellen Spielers auf das Spielfeld.
+ * @brief Setzt das Zeichen des aktuellen Spielers auf das Spielfeld.
  * Gibt 1 zurück, wenn der Zug erfolgreich war, andernfalls 0.
  * 
  * @param board Das Spielfeld als 2D-Array.
@@ -44,7 +55,7 @@ int makeMove(char board[ROWS][COLS], int column, int player) {
 }
 
 /**
- * Überprüft, ob ein Spieler gewonnen hat.
+ * @brief Überprüft, ob ein Spieler gewonnen hat.
  * Überprüft horizontale, vertikale und diagonale Gewinnbedingungen.
  * 
  * @param board Das Spielfeld als 2D-Array.

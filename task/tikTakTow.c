@@ -1,10 +1,15 @@
+/**
+ * @file tikTakTow.c
+ * @brief Aufgabe 1 Vervollstänig den File Kommentar
+ * 
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
 #define SIZE 3  // Größe des Tic-Tac-Toe Spielfeldes (3x3)
 
 /**
- * Gibt das Spielfeld aus.
+ * @brief Gibt das Spielfeld aus.
  *
  * Diese Funktion zeigt das aktuelle Spielfeld auf der Konsole an, indem sie
  * die Symbole der Spieler (X, O) oder leere Felder anzeigt. Die Darstellung
@@ -24,9 +29,7 @@ void printBoard(char board[SIZE][SIZE]) {
 }
 
 /**
- * Aufgabe 3
- * Füge hier die Doxygen Kommentare hinzu
- * 
+ * @brief 2: Füge einen Funktions Kommentar für die funktion checkWinner hinzu
  */
 int checkWinner(char board[SIZE][SIZE]) {
     // Überprüfe horizontale Reihen
@@ -55,7 +58,7 @@ int checkWinner(char board[SIZE][SIZE]) {
 }
 
 /**
- * Überprüft, ob das Spielfeld voll ist (kein Platz mehr für Züge).
+ * @brief Überprüft, ob das Spielfeld voll ist (kein Platz mehr für Züge).
  *
  * Diese Funktion wird verwendet, um zu überprüfen, ob alle Felder des Spielfelds
  * ausgefüllt wurden. Ein vollbesetztes Spielfeld bedeutet, dass das Spiel Unentschieden endet.
@@ -75,9 +78,7 @@ int isBoardFull(char board[SIZE][SIZE]) {
 }
 
 /**
- * Aufgabe 2
- * Füge hier die Doxygen Kommentare hinzu
- * 
+ * @brief Aufgabe 3: Füge einen Funktions Kommentar für die funktion makeMove hinzu
  */
 int makeMove(char board[SIZE][SIZE], char player) {
     char column;
@@ -101,17 +102,15 @@ int makeMove(char board[SIZE][SIZE], char player) {
 }
 
 /**
- * Aufgabe 1
- * Füge hier die Doxygen Kommentare hinzu
- * 
+ * @brief Aufgabe 4: Füge einen Funktions Kommentar für die funktion switchPlayer hinzu
  */
 char switchPlayer(char currentPlayer) {
     return (currentPlayer == 'X') ? 'O' : 'X';
 }
 
 /**
- * Löscht die Konsole.
- *
+ * @brief Löscht die Konsole.
+ * 
  * Diese Funktion löscht den Inhalt der Konsole, um das Spielfeld nach jedem Zug
  * neu anzuzeigen.
  */
@@ -120,14 +119,17 @@ void clearConsole() {
 }
 
 /**
- * Hauptfunktion, die das Tic-Tac-Toe Spiel steuert.
- *
+ * @brief Hauptfunktion, die das Tic-Tac-Toe Spiel steuert.
+ * 
  * Diese Funktion führt das Spiel aus, wechselt die Spieler, überprüft den Gewinner
- * und gibt das Endergebnis aus.
+ * und gibt das Endergebnis aus. Das Spiel läuft in einer Schleife, bis ein Spieler gewonnen hat
+ * oder das Spielfeld voll ist und ein Unentschieden vorliegt.
+ * 
+ * @return 0, wenn das Spiel erfolgreich beendet wurde.
  */
 int main() {
-    char board[SIZE][SIZE] = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
-    char currentPlayer = 'X';
+    char board[SIZE][SIZE] = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};  // Initialisiere das Spielfeld
+    char currentPlayer = 'X';  // Spieler X beginnt
     int winner = 0;
 
     printf("Willkommen zu Tic-Tac-Toe!\n");

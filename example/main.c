@@ -1,8 +1,17 @@
+/**
+ * @file main.c
+ * @brief Hauptprogramm für das Vier-Gewinnt-Spiel.
+ * 
+ * Diese Datei enthält die `main`-Funktion und steuert den Spielablauf,
+ * indem sie Funktionen für die Spiellogik, die Eingabe und die Ausgabe
+ * aus anderen Dateien aufruft.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ROWS 6
-#define COLS 7
+#define ROWS 6  ///< Anzahl der Reihen im Spielfeld
+#define COLS 7  ///< Anzahl der Spalten im Spielfeld
 
 extern int checkFullBoard(char board[ROWS][COLS]);
 extern int makeMove(char board[ROWS][COLS], int column, int player);
@@ -12,16 +21,21 @@ extern void printBoard(char board[ROWS][COLS]);
 extern void printWinner(int winner);
 
 /**
- * Main-Funktion, um das Spiel zu starten.
+ * @brief Main-Funktion, um das Spiel zu starten.
+ * 
  * Das Spiel läuft solange, bis ein Gewinner ermittelt wurde oder das Spielfeld voll ist.
+ * Die Funktion wechselt zwischen den beiden Spielern, nimmt Eingaben entgegen,
+ * führt Züge aus und zeigt das Spielfeld sowie den Gewinner an.
+ * 
+ * @return 0, wenn das Programm erfolgreich beendet wurde.
  */
 int main() {
-    char board[6][7] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' '},
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
-                        {' ', ' ', ' ', ' ', ' ', ' ', ' '}};  // Spielfeld initialisieren
+    char board[ROWS][COLS] = {{' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
+                              {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                              {' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
+                              {' ', ' ', ' ', ' ', ' ', ' ', ' '},
+                              {' ', ' ', ' ', ' ', ' ', ' ', ' '}, 
+                              {' ', ' ', ' ', ' ', ' ', ' ', ' '}};  // Spielfeld initialisieren
 
     int currentPlayer = 1;  // 1 für Spieler 1 (X), 2 für Spieler 2 (O)
     int column, winner = 0;

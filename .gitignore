@@ -1,6 +1,6 @@
 # Ignoriere alle Inhalte des 'docs'-Ordners, aber nicht die Ordner selbst
-example/doc/*
-task/doc/*
+example/docs/*
+task/docs/*
 
 # Behalte den Ordner 'docs' selbst
 !example/doc/.gitignore
